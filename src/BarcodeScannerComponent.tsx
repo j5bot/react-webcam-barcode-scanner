@@ -29,7 +29,8 @@ const BarcodeScannerComponent = ({
   )
 
   React.useEffect(() => {
-    setInterval(capture, 100)
+    const id = setInterval(capture, 100)
+    return () => clearInterval(id);
   }, []);
 
   return (
